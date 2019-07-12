@@ -1,7 +1,11 @@
 import React from "react";
 import "./App.css";
+import { Trans } from "@lingui/macro";
 
-interface IAppProps {}
+interface IAppProps {
+  switchToFrench(): void;
+  switchToEnglish(): void;
+}
 
 interface IAppState {
   date: Date;
@@ -10,7 +14,7 @@ interface IAppState {
 class App extends React.Component<IAppProps, IAppState> {
   private timerID: number;
 
-  constructor(props: {}) {
+  constructor(props: IAppProps) {
     super(props);
     this.state = {
       date: new Date()
@@ -32,10 +36,16 @@ class App extends React.Component<IAppProps, IAppState> {
   }
 
   render() {
+    const { switchToEnglish, switchToFrench } = this.props;
+
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h1>
+          <Trans>Hello World!</Trans>
+        </h1>
+        <h2>It is {this.state.date.toLocaleTimeString()} now.</h2>
+        <button onClick={switchToEnglish}>English</button>
+        <button onClick={switchToFrench}>Français</button>
       </div>
     );
   }
