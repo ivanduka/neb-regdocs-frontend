@@ -1,3 +1,8 @@
 .App {
   text-align: initial;
 }
+
+.logos {
+  max-width: 400px;
+  margin: 10px;
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Trans } from "@lingui/macro";
+import C4C from "./images/cfc.jpg";
+import NEB from "./images/neb.jpg";
 
 interface IAppProps {
   switchToFrench(): void;
@@ -46,6 +48,20 @@ class App extends React.Component<IAppProps, IAppState> {
         <h2>It is {this.state.date.toLocaleTimeString()} now.</h2>
         <button onClick={switchToEnglish}>English</button>
         <button onClick={switchToFrench}>Français</button>
+        <div>
+          <img
+            src={C4C}
+            className="img-fluid logos"
+            alt="Code For Canada Logo"
+          />
+        </div>
+        <div>
+          <img
+            src={NEB}
+            className="img-fluid logos"
+            alt="National Energy Board of Canada Logo"
+          />
+        </div>
       </div>
     );
   }

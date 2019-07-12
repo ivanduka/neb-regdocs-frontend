@@ -5,8 +5,9 @@ import App from "./App";
 import { I18nProvider } from "@lingui/react";
 import Cookies from "js-cookie";
 import catalogFr from "./locales/fr/messages.js";
+import catalogEn from "./locales/en/messages.js";
 
-const catalogs = { fr: catalogFr };
+const catalogs = { fr: catalogFr, en: catalogEn };
 const LOCALE_COOKIE = "__locale";
 const getLocaleFromCookies = () => Cookies.get(LOCALE_COOKIE) || "en";
 const saveLocaleToCookies = (locale: string) =>
