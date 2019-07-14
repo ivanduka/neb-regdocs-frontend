@@ -1,1 +1,1 @@
-/* eslint-disable */module.exports={languageData:{"plurals":function(n,ord){if(ord)return n==1?"one":"other";return n>=0&&n<2?"one":"other"}},messages:{"Hello World!":"Bonjour le Monde!"}};
+/* eslint-disable */module.exports={languageData:{"plurals":function(n,ord){if(ord)return n==1?"one":"other";return n>=0&&n<2?"one":"other"}},messages:{"Hello World!":"Bonjour le Monde!","It is {0} now.":function(a){return["Il est ",a("0")," maintenant."]}}};

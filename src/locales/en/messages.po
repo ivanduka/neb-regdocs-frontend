@@ -6,3 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/App.tsx:28
+msgid "Hello World!"
+msgstr "Hello World!"
+
+#: src/App.tsx:31
+msgid "It is {0} now."
+msgstr "It is {0} now."

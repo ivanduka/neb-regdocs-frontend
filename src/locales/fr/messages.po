@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/App.tsx:26
+#: src/App.tsx:28
 msgid "Hello World!"
 msgstr "Bonjour le Monde!"
+
+#: src/App.tsx:31
+msgid "It is {0} now."
+msgstr "Il est {0} maintenant."

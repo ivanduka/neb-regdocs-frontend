@@ -3,7 +3,15 @@
     "origin": [
       [
         "src/App.tsx",
-        26
+        28
+      ]
+    ]
+  },
+  "It is {0} now.": {
+    "origin": [
+      [
+        "src/App.tsx",
+        31
       ]
     ]
   }

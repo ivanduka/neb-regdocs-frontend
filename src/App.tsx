@@ -1,8 +1,8 @@
-import React from "react";
-import "./App.css";
-import { Trans } from "@lingui/macro";
-import C4C from "./images/cfc.jpg";
-import NEB from "./images/neb.jpg";
+import React from 'react';
+import './App.css';
+import { Trans } from '@lingui/macro';
+import C4C from './images/cfc.jpg';
+import NEB from './images/neb.jpg';
 
 interface IAppProps {
   switchToFrench(): void;
@@ -19,7 +19,7 @@ class App extends React.Component<IAppProps, IAppState> {
   constructor(props: IAppProps) {
     super(props);
     this.state = {
-      date: new Date()
+      date: new Date(),
     };
   }
 
@@ -33,7 +33,7 @@ class App extends React.Component<IAppProps, IAppState> {
 
   tick() {
     this.setState({
-      date: new Date()
+      date: new Date(),
     });
   }
 
@@ -45,7 +45,9 @@ class App extends React.Component<IAppProps, IAppState> {
         <h1>
           <Trans>Hello World!</Trans>
         </h1>
-        <h2>It is {this.state.date.toLocaleTimeString()} now.</h2>
+        <h2>
+          <Trans>It is {this.state.date.toLocaleTimeString()} now.</Trans>
+        </h2>
         <button onClick={switchToEnglish}>English</button>
         <button onClick={switchToFrench}>Français</button>
         <div>
