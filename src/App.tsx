@@ -1,8 +1,10 @@
-import React from 'react';
-import './App.css';
-import { Trans } from '@lingui/macro';
-import C4C from './images/cfc.jpg';
-import NEB from './images/neb.jpg';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { Trans } from "@lingui/macro";
+import C4C from "./images/cfc.jpg";
+import NEB from "./images/neb.jpg";
+import { Button, Container, Row, Col, Image } from "react-bootstrap";
 
 interface IAppProps {
   switchLang(locale: string): void;
@@ -18,7 +20,7 @@ class App extends React.Component<IAppProps, IAppState> {
   constructor(props: IAppProps) {
     super(props);
     this.state = {
-      date: new Date(),
+      date: new Date()
     };
   }
 
@@ -32,7 +34,7 @@ class App extends React.Component<IAppProps, IAppState> {
 
   tick() {
     this.setState({
-      date: new Date(),
+      date: new Date()
     });
   }
 
@@ -41,20 +43,39 @@ class App extends React.Component<IAppProps, IAppState> {
 
     return (
       <div>
-        <h1>
+        <Container>
+          <Row>
+            <Col>
+              <h1>
+                <Trans>Hello World!</Trans>
+              </h1>
+              <h2>
+                <Trans>It is {this.state.date.toLocaleTimeString()} now.</Trans>
+              </h2>
+              <Button onClick={() => switchLang("en")}>English</Button>
+              <Button onClick={() => switchLang("fr")}>Français</Button>
+              <Row>
+                <Col>
+                  <Image fluid src={C4C} alt="Code For Canada Logo" />
+                </Col>
+                <Col>
+                  <Image src={NEB} alt="National Energy Board of Canada Logo" />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+
+        {/* <h1>
           <Trans>Hello World!</Trans>
         </h1>
         <h2>
           <Trans>It is {this.state.date.toLocaleTimeString()} now.</Trans>
         </h2>
-        <button onClick={() => switchLang('en')}>English</button>
-        <button onClick={() => switchLang('fr')}>Français</button>
+        <Button onClick={() => switchLang('en')}>English</Button>
+        <Button onClick={() => switchLang('fr')}>Français</Button>
         <div>
-          <img
-            src={C4C}
-            className="img-fluid logos"
-            alt="Code For Canada Logo"
-          />
+          <img />
         </div>
         <div>
           <img
@@ -62,7 +83,7 @@ class App extends React.Component<IAppProps, IAppState> {
             className="img-fluid logos"
             alt="National Energy Board of Canada Logo"
           />
-        </div>
+        </div> */}
       </div>
     );
   }
