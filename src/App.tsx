@@ -5,8 +5,7 @@ import C4C from './images/cfc.jpg';
 import NEB from './images/neb.jpg';
 
 interface IAppProps {
-  switchToFrench(): void;
-  switchToEnglish(): void;
+  switchLang(locale: string): void;
 }
 
 interface IAppState {
@@ -38,7 +37,7 @@ class App extends React.Component<IAppProps, IAppState> {
   }
 
   render() {
-    const { switchToEnglish, switchToFrench } = this.props;
+    const { switchLang } = this.props;
 
     return (
       <div>
@@ -48,8 +47,8 @@ class App extends React.Component<IAppProps, IAppState> {
         <h2>
           <Trans>It is {this.state.date.toLocaleTimeString()} now.</Trans>
         </h2>
-        <button onClick={switchToEnglish}>English</button>
-        <button onClick={switchToFrench}>Français</button>
+        <button onClick={() => switchLang('en')}>English</button>
+        <button onClick={() => switchLang('fr')}>Français</button>
         <div>
           <img
             src={C4C}

@@ -42,10 +42,7 @@ class TranslationWrapper extends React.Component<IProps, IState> {
   render() {
     return (
       <I18nProvider language={this.state.locale} catalogs={catalogs}>
-        <App
-          switchToFrench={() => this.switchLang('fr')}
-          switchToEnglish={() => this.switchLang('en')}
-        />
+        <App switchLang={(locale: string) => this.switchLang(locale)} />
       </I18nProvider>
     );
   }
