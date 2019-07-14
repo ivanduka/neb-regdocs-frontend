@@ -15,6 +15,7 @@ import {
 
 interface IAppProps {
   switchLang(locale: string): void;
+  currentLanguage: string;
 }
 
 interface IAppState {
@@ -63,15 +64,25 @@ class App extends React.Component<IAppProps, IAppState> {
               aria-label="Changing the website language"
               className="d-flex justify-content-center"
             >
-              <Button className="m-1" onClick={() => switchLang("en")}>
+              <Button
+                className="m-1"
+                variant="outline-info"
+                disabled={this.props.currentLanguage === "en"}
+                onClick={() => switchLang("en")}
+              >
                 English
               </Button>
-              <Button className="m-1" onClick={() => switchLang("fr")}>
+              <Button
+                className="m-1"
+                variant="outline-info"
+                disabled={this.props.currentLanguage === "fr"}
+                onClick={() => switchLang("fr")}
+              >
                 Français
               </Button>
             </ButtonToolbar>
             <Row>
-              <Col className="d-flex justify-content-center flex-wrap">
+              <Col className="d-flex justify-content-around flex-wrap">
                 <a
                   href="https://codefor.ca/"
                   target="_blank"
