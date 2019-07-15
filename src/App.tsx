@@ -97,7 +97,7 @@ class App extends React.Component<IAppProps, IAppState> {
                   />
                 </a>
                 <a
-                  href="http://neb-one.gc.ca/index-eng.html"
+                  href="https://www.neb-one.gc.ca/index-eng.html"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
