@@ -11,27 +11,33 @@ const catalogs = { fr: catalogFr, en: catalogEn };
 
 const LOCALE_COOKIE = "__locale";
 
+export enum Language {
+  en = "en",
+  fr = "fr"
+}
+
 interface IProps {}
 
 interface IState {
-  locale: string;
+  locale: Language;
 }
 
 class TranslationWrapper extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      locale: ""
+      locale: Language.en
     };
   }
 
   componentDidMount() {
     this.setState({
-      locale: Cookies.get(LOCALE_COOKIE) || "en"
+      locale:
+        Language[(Cookies.get(LOCALE_COOKIE) || "en") as keyof typeof Language]
     });
   }
 
-  switchLang(locale: string) {
+  switchLang(locale: Language) {
     this.setState({
       locale
     });
@@ -43,7 +49,7 @@ class TranslationWrapper extends React.Component<IProps, IState> {
     return (
       <I18nProvider language={this.state.locale} catalogs={catalogs}>
         <App
-          switchLang={(locale: string) => this.switchLang(locale)}
+          switchLang={(locale: Language) => this.switchLang(locale)}
           currentLanguage={this.state.locale}
         />
       </I18nProvider>

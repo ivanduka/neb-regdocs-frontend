@@ -4,6 +4,7 @@ import "./App.css";
 import { Trans } from "@lingui/macro";
 import C4C from "./images/cfc.png";
 import NEB from "./images/neb.jpg";
+import { Language } from "./index";
 import {
   Button,
   Container,
@@ -14,7 +15,7 @@ import {
 } from "react-bootstrap";
 
 interface IAppProps {
-  switchLang(locale: string): void;
+  switchLang(locale: Language): void;
   currentLanguage: string;
 }
 
@@ -67,16 +68,16 @@ class App extends React.Component<IAppProps, IAppState> {
               <Button
                 className="m-1"
                 variant="outline-info"
-                disabled={this.props.currentLanguage === "en"}
-                onClick={() => switchLang("en")}
+                disabled={this.props.currentLanguage === Language.en}
+                onClick={() => switchLang(Language.en)}
               >
                 English
               </Button>
               <Button
                 className="m-1"
                 variant="outline-info"
-                disabled={this.props.currentLanguage === "fr"}
-                onClick={() => switchLang("fr")}
+                disabled={this.props.currentLanguage === Language.fr}
+                onClick={() => switchLang(Language.fr)}
               >
                 Français
               </Button>
