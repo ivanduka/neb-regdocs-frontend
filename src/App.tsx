@@ -68,16 +68,16 @@ class App extends React.Component<IAppProps, IAppState> {
               <Button
                 className="m-1"
                 variant="outline-info"
-                disabled={this.props.currentLanguage === Language.en}
-                onClick={() => switchLang(Language.en)}
+                disabled={this.props.currentLanguage === "en"}
+                onClick={() => switchLang("en")}
               >
                 English
               </Button>
               <Button
                 className="m-1"
                 variant="outline-info"
-                disabled={this.props.currentLanguage === Language.fr}
-                onClick={() => switchLang(Language.fr)}
+                disabled={this.props.currentLanguage === "fr"}
+                onClick={() => switchLang("fr")}
               >
                 Français
               </Button>
